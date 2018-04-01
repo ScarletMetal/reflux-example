@@ -10,6 +10,7 @@ class Question extends Reflux.Component {
     this.state = {
       name: props.name,
       stage: props.stage,
+      min: props.min,
       value: "0"
     }
     this.setData(0)
@@ -29,12 +30,12 @@ class Question extends Reflux.Component {
     return () => {
       let val = parseInt(this.state.value)
       val += jump
-      this.setData(val)
     }
   }
   render() {
 
     return <div>
+      <b> {this.state.name} </b> <br/>
       <button className="input-btn" onClick={this.jumpValue(-1).bind(this)}>-1</button>
       <input type="number" value={this.state.value} onChange={this.updateValue.bind(this)}/>
       <button className="input-btn" onClick={this.jumpValue(+1).bind(this)}>+1</button>
