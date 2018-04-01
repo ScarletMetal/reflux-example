@@ -22,8 +22,13 @@ class Question extends Reflux.Component {
   }
 
   setData(value) {
-    this.setState({value: value})
-    formStoreActions.setData(this.state.stage, this.state.name, value)
+    if (this.state.min && value < this.state.min) {
+      this.setState({value: this.state.min})
+      formStoreActions.setData(this.state.stage, this.state.name, this.state.min)
+    } else {
+      this.setState({value: value})
+      formStoreActions.setData(this.state.stage, this.state.name, value)
+    }
   }
 
   jumpValue(jump) {
