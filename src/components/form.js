@@ -14,8 +14,13 @@ class Form extends Reflux.Component {
 
   render() {
     const questions = []
-    this.items.forEach(item => {
-      questions.push(<Question name={item.name} stage={item.stage}/>)
+
+    Object.keys(this.items).forEach(stage => {
+      const questionsData = this.items[stage]
+      questions.push(<h1>{stage}</h1>)
+      questionsData.forEach(questionData => {
+        questions.push(<Question name={questionData.name} min={questionData.min} stage={stage}/>)
+      })
     })
 
     return <div>
