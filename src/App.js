@@ -4,12 +4,15 @@ import Form from './components/form'
 import FormView from './components/form-view'
 class App extends Component {
   render() {
-    let items = [
-      {name: '123', stage: 'auto'},
-      {name: '456', stage: 'auto'},
-      {name: '789', stage: 'teleop'},
-      {name: '4586', stage: 'teleop', min:0}
-    ]
+    let items = {
+      auto : [
+        {name: 'Example 1', min: 0}
+      ],
+      teleop: [
+        {name: 'Example 2', min: 1}
+      ]
+    }
+
     return (
       <div>
         <Form items={items}/>
