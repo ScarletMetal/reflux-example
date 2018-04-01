@@ -6,10 +6,10 @@ class App extends Component {
   render() {
     let items = {
       auto : [
-        {name: 'Example 1', min: 0}
+        {name: 'Example 1', min: '0'}
       ],
       teleop: [
-        {name: 'Example 2', min: 1}
+        {name: 'Example 2', min: '1'}
       ]
     }
 
