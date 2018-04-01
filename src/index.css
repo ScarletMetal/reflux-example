@@ -9,7 +9,5 @@ body {
 }
 .input-btn {
   width: 20vw;
-  background-color: slategray;
-  color: whitesmoke;
   max-width: 100px;
 }

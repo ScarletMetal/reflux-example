@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 
 import Form from './components/form'
 import FormView from './components/form-view'
+
+import 'bootstrap/dist/css/bootstrap.css'
 class App extends Component {
   render() {
     let items = {
@@ -14,7 +16,7 @@ class App extends Component {
     }
 
     return (
-      <div>
+      <div className="text-center">
         <Form items={items}/>
         <hr/>
         <FormView/>
