@@ -7,8 +7,7 @@ class FormStore extends Reflux.Store {
     super()
     this.listenables = Actions
     this.state = {
-      form: {
-      }
+      form: {}
     }
   }
 
@@ -17,7 +16,6 @@ class FormStore extends Reflux.Store {
     if (!form[stage]) form[stage] = {}
     form[stage][key] = value
     this.setState({form: form})
-    console.log(`${key} - ${value}`)
   }
 
   onReset() {
