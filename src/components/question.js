@@ -11,7 +11,7 @@ class Question extends Reflux.Component {
       name: props.name,
       stage: props.stage,
       min: props.min,
-      value: "0"
+      value: props.min ? props.min : '0'
     }
     this.setData(0)
     this.store = FormStore
