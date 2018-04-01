@@ -8,7 +8,7 @@ class App extends Component {
       {name: '123', stage: 'auto'},
       {name: '456', stage: 'auto'},
       {name: '789', stage: 'teleop'},
-      {name: '4586', stage: 'teleop'}
+      {name: '4586', stage: 'teleop', min:0}
     ]
     return (
       <div>
