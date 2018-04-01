@@ -30,6 +30,7 @@ class Question extends Reflux.Component {
     return () => {
       let val = parseInt(this.state.value)
       val += jump
+      this.setData(val)
     }
   }
   render() {
