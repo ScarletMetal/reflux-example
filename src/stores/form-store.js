@@ -1,6 +1,7 @@
 import Reflux from 'reflux'
 import Actions from './form-store-actions'
-import Question from "../components/question";
+import Question from "../components/question"
+import axios from 'axios'
 
 class FormStore extends Reflux.Store {
   constructor() {
@@ -20,6 +21,17 @@ class FormStore extends Reflux.Store {
 
   onReset() {
     this.setState({form: {}})
+  }
+
+  onSubmit() {
+    axios.post('http://localhost/scouting-form', {match: form})
+      .then(() => {
+        console.log("submitted successfully")
+      })
+      .catch(err => {
+        alert('error while submitting data')
+        console.error(err)
+      })
   }
 }
 
