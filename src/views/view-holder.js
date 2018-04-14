@@ -20,5 +20,6 @@ class ViewHolder extends Reflux.Component {
     return this.views[currentViewIndex]
   }
 
-
 }
+
+export default ViewHolder

@@ -21,3 +21,5 @@ class ViewA extends React.Component {
     )
   }
 }
+
+export default ViewA
