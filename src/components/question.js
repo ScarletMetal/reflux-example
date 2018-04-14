@@ -10,8 +10,7 @@ class Question extends Reflux.Component {
     this.state = {
       name: props.name,
       stage: props.stage,
-      min: props.min,
-      value: props.min ? props.min : '0'
+      min: props.min
     }
     this.setData(0)
     this.store = FormStore
@@ -23,17 +22,15 @@ class Question extends Reflux.Component {
 
   setData(value) {
     if (this.state.min && value < this.state.min) {
-      this.setState({value: this.state.min})
       formStoreActions.setData(this.state.stage, this.state.name, this.state.min)
     } else {
-      this.setState({value: value})
       formStoreActions.setData(this.state.stage, this.state.name, value)
     }
   }
 
   jumpValue(jump) {
     return () => {
-      let val = parseInt(this.state.value)
+      let val = parseInt(this.state.form[this.state.stage][this.state.name])
       val += jump
       this.setData(val)
     }
@@ -44,7 +41,8 @@ class Question extends Reflux.Component {
       <b> {this.state.name} </b> <br/>
       <div className="ui buttons">
         <button className="input-btn ui button black" onClick={this.jumpValue(-1).bind(this)}>-1</button>
-        <input type="number" className="ui button secondary basic" style={{maxWidth: '150px'}} value={this.state.value} onChange={this.updateValue.bind(this)}/>
+        <input type="number" className="ui button secondary basic" style={{maxWidth: '150px'}}
+               value={this.state.form[this.state.stage][this.state.name]} onChange={this.updateValue.bind(this)}/>
         <button className="input-btn ui button black" onClick={this.jumpValue(+1).bind(this)}>+1</button>
       </div>
     </div>

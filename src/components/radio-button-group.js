@@ -30,7 +30,7 @@ class RadioButtonGroup extends Reflux.Component {
 
     this.state.options.forEach(option => {
       let className = 'ui button'
-      if (option === this.state.selectedOption)
+      if (option === this.state.form[this.state.stage][this.state.name])
         className += ' red'
       else
         className += ' black'
