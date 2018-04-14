@@ -23,16 +23,6 @@ class FormStore extends Reflux.Store {
     this.setState({form: {}})
   }
 
-  onSubmit() {
-    axios.post('http://localhost/scouting-form', {match: form})
-      .then(() => {
-        console.log("submitted successfully")
-      })
-      .catch(err => {
-        alert('error while submitting data')
-        console.error(err)
-      })
-  }
 }
 
 export default FormStore
