@@ -42,10 +42,10 @@ class Question extends Reflux.Component {
 
     return <div>
       <b> {this.state.name} </b> <br/>
-      <div className="btn btn-group">
-        <button className="input-btn btn btn-primary" onClick={this.jumpValue(-1).bind(this)}>-1</button>
-        <input type="number" className="btn btn-outline-secondary" style={{maxWidth: '150px'}} value={this.state.value} onChange={this.updateValue.bind(this)}/>
-        <button className="input-btn btn btn-primary" onClick={this.jumpValue(+1).bind(this)}>+1</button>
+      <div className="ui buttons">
+        <button className="input-btn ui button black" onClick={this.jumpValue(-1).bind(this)}>-1</button>
+        <input type="number" className="ui button secondary basic" style={{maxWidth: '150px'}} value={this.state.value} onChange={this.updateValue.bind(this)}/>
+        <button className="input-btn ui button black" onClick={this.jumpValue(+1).bind(this)}>+1</button>
       </div>
     </div>
   }
