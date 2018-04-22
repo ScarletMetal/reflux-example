@@ -1,6 +1,5 @@
 import Reflux from 'reflux'
 import Actions from './form-store-actions'
-import Question from "../components/question"
 import axios from 'axios'
 
 class FormStore extends Reflux.Store {

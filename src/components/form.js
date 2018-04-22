@@ -1,7 +1,8 @@
 import React from 'react'
 import Reflux from 'reflux'
 import FormStore from '../stores/form-store'
-import Question from '../components/question'
+import NumericInput from './numeric-question'
+import RadioButtonGroup from '../components/radio-button-group'
 
 class Form extends Reflux.Component {
   constructor(props) {
@@ -19,12 +20,17 @@ class Form extends Reflux.Component {
       const questionsData = this.items[stage]
       questions.push(<h1>{stage}</h1>)
       questionsData.forEach(questionData => {
-        questions.push(<Question name={questionData.name} min={questionData.min} stage={stage}/>)
+        if (questionData.type === 'number')
+          questions.push(<NumericInput name={questionData.name} min={questionData.min} stage={stage}/>)
+        else if (questionData.type === 'enum')
+          questions.push(<RadioButtonGroup name={questionData.name} stage={stage} options={questionData.options}/>)
       })
     })
 
     return <div>
-      {questions}
+      {questions} <br/>
+
+      <button className="ui button blue" style={{maxWidth: '200px', width: '30vw'}}>Submit</button>
     </div>
   }
 }

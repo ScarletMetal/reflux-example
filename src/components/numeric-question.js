@@ -3,7 +3,7 @@ import Reflux from 'reflux'
 import FormStore from '../stores/form-store'
 import formStoreActions from '../stores/form-store-actions'
 
-class Question extends Reflux.Component {
+class NumericInput extends Reflux.Component {
   constructor(props) {
     super(props)
 
@@ -38,8 +38,8 @@ class Question extends Reflux.Component {
     return <div>
       <b> {this.state.name} </b> <br/>
       <div className="ui buttons">
-        <button className="input-btn ui button black" onClick={this.jumpValue(-1).bind(this)}>-1</button>
-        <input type="number" className="ui button secondary basic" style={{maxWidth: '150px'}} value={
+        <button className="input-btn ui button blue" onClick={this.jumpValue(-1).bind(this)}>-1</button>
+        <input type="number" className="ui button primary basic" style={{maxWidth: '150px'}} value={
           (() => {
             try{
               return this.state.form[this.state.stage][this.state.name]
@@ -49,10 +49,10 @@ class Question extends Reflux.Component {
             }
           }).bind(this)()
         }/>
-        <button className="input-btn ui button black" onClick={this.jumpValue(+1).bind(this)}>+1</button>
+        <button className="input-btn ui button blue" onClick={this.jumpValue(+1).bind(this)}>+1</button>
       </div>
     </div>
   }
 }
 
-export default Question
+export default NumericInput

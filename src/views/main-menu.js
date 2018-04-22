@@ -12,16 +12,16 @@ class MainMenu extends Reflux.Component {
   }
 
   render() {
-    const options = [
+    const items = [
       {name: 'View 1'},
       {name: 'View 2'}
     ]
 
-    const onClickItem = (event, data) => {
+    const onItemClick = (event, data) => {
       viewStoreActions.setView(data.index)
     }
 
-    return <MainMenu options={options}/>
+    return <Menu onItemClick={onItemClick} items={items}/>
   }
 
 }

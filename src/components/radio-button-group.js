@@ -18,7 +18,6 @@ class RadioButtonGroup extends Reflux.Component {
     this.store = FormStore
     
     this.state.selectedOption = this.state.options[0]
-    formStoreActions.setData(this.state.stage, this.state.name, this.state.options[0])
   }
 
   updateOption(option) {
@@ -31,9 +30,9 @@ class RadioButtonGroup extends Reflux.Component {
     this.state.options.forEach(option => {
       let className = 'ui button'
       if (option === this.state.form[this.state.stage][this.state.name])
-        className += ' red'
+        className += ' blue'
       else
-        className += ' black'
+        className += ' gray'
       buttons.push(
         <button className={className} onClick={() => this.updateOption(option.toString())}>{option}</button>
       )

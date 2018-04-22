@@ -18,7 +18,7 @@ class FormView extends Reflux.Component {
       items.push(<b>{stage}</b>)
       items.push(<br/>)
       Object.keys(form[stage]).forEach(item => {
-        items.push(<b style={{color: 'red'}}>{`${item} : ${form[stage][item]}`}</b>)
+        items.push(<b style={{color: "black"}}>{`${item} : ${form[stage][item]}`}</b>)
         items.push(<br/>)
       })
     })

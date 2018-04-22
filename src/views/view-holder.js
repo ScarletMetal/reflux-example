@@ -17,7 +17,7 @@ class ViewHolder extends Reflux.Component {
   render() {
     const {currentViewIndex} = this.state
 
-    return this.views[currentViewIndex]
+    return <div style={{textAlign: 'center'}}>{this.views[currentViewIndex]}</div>
   }
 
 }
