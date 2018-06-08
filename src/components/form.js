@@ -1,5 +1,7 @@
 import React from 'react'
 import Reflux from 'reflux'
+
+import formStoreActions from '../stores/form-store-actions'
 import FormStore from '../stores/form-store'
 import NumericInput from './numeric-question'
 import RadioButtonGroup from '../components/radio-button-group'
@@ -30,7 +32,12 @@ class Form extends Reflux.Component {
     return <div>
       {questions} <br/>
 
-      <button className="ui button blue" style={{maxWidth: '200px', width: '30vw'}}>Submit</button>
+      <button className="ui button blue"
+              style={{maxWidth: '200px', width: '30vw'}}
+              onClick={() => {
+                formStoreActions.submit()
+              }}
+      >Submit</button>
     </div>
   }
 }

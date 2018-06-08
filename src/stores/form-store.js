@@ -22,6 +22,18 @@ class FormStore extends Reflux.Store {
     this.setState({form: {}})
   }
 
+  onSubmit() {
+    axios.post('/submit', {
+      form: this.state.form
+    })
+      .then(() => {
+        alert('submitted form successfully')
+      })
+      .catch(err => {
+        console.log('error while submitting form')
+      })
+  }
+
 }
 
 export default FormStore

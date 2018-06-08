@@ -4,6 +4,8 @@ import React from 'react'
 import FormStore from '../stores/form-store'
 import formStoreActions from '../stores/form-store-actions'
 
+import {Button} from 'semantic-ui-react'
+
 class RadioButtonGroup extends Reflux.Component {
   constructor(props) {
     super(props)
@@ -28,13 +30,12 @@ class RadioButtonGroup extends Reflux.Component {
     const buttons = []
 
     this.state.options.forEach(option => {
-      let className = 'ui button'
+      let color = 'gray'
       if (option === this.state.form[this.state.stage][this.state.name])
-        className += ' blue'
-      else
-        className += ' gray'
+        color = ' blue'
+
       buttons.push(
-        <button className={className} onClick={() => this.updateOption(option.toString())}>{option}</button>
+        <Button color={color} onClick={() => this.updateOption(option.toString())}>{option}</Button>
       )
     })
 
